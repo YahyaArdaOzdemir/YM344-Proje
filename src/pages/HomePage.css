@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #2980b9; /* Blue background color */
+  padding: 50px;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.logo {
+  width: 200px; /* Larger logo size */
+  max-width: 100%; /* Ensure logo stays within container */
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.home-text {
+  font-family: 'Roboto', sans-serif; /* Use Roboto font for the text */
+  font-size: 24px; /* Larger font size for the text */
+  color: white; /* White text color */
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.home-button {
+  width: 250px;
+  padding: 15px;
+  font-size: 17px; /* Larger font size */
+  color: white; /* White text color */
+  background-color: #3498db; /* Blue button background color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+  background-color: #b92929; /* Slightly darker blue on hover */
+}

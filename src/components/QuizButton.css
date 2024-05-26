@@ -1,0 +1,18 @@
+/* src/components/QuizButton.css */
+.quiz-button {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .quiz-button.correct {
+    background-color: green;
+    color: white;
+  }
+  
+  .quiz-button.wrong {
+    background-color: red;
+    color: white;
+  }
+  

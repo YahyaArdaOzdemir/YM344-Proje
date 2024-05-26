@@ -1,0 +1,138 @@
+/* src/pages/QuizPage.css */
+.quiz-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+  max-width: 150px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.question-navigation h2 {
+  margin-bottom: 10px;
+}
+
+.question-navigation .button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.question-navigation .button:hover {
+  background-color: #2980b9;
+}
+
+.question-navigation .question-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.question-navigation .question-list .question-item {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  margin: 2px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.question-navigation .question-list .question-item:hover {
+  background-color: #c0c0c0;
+}
+
+.question-navigation .question-list .question-item.active {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.main-content {
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.question-block {
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #c0c0c0;
+}
+
+.option.correct.selected,
+.option.correct {
+  background-color: #8ed68e; /* Light green for correct answer */
+}
+
+.option.incorrect.selected {
+  background-color: #ff7f7f; /* Light red for incorrect answer */
+}
+
+.correct-answer {
+  color: green;
+}
+
+.incorrect-answer {
+  color: red;
+}
+
+.justification {
+  margin-top: 20px;
+}
+
+.justification p {
+  margin-bottom: 10px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.next-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

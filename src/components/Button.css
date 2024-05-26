@@ -1,0 +1,17 @@
+/* src/components/Button.css */
+.home-button {
+  width: 250px;
+  padding: 15px;
+  font-size: 18px; /* Larger font size */
+  color: white; /* White text color */
+  background-color: #3498db; /* Blue button background color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+  background-color: #2980b9; /* Slightly darker blue on hover */
+}
