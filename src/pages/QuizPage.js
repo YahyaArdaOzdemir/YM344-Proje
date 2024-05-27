@@ -58,11 +58,12 @@ const QuizPage = () => {
   if (showResults) {
     return (
       <div className="quiz-container">
-        <h2>Quiz Results</h2>
-        <p>Correct Answers: {correctAnswersCount}</p>
-        <p>Incorrect Answers: {quiz.questions.length - correctAnswersCount}</p>
-        <button onClick={() => navigate('/')}>Return to homepage</button>
-        {/* Additional code to show answers can be added here */}
+        <div className="results-container">
+          <h2>Quiz Results</h2>
+          <p>Correct Answers: {correctAnswersCount}</p>
+          <p>Incorrect Answers: {quiz.questions.length - correctAnswersCount}</p>
+          <button onClick={() => navigate('/')}>Return to homepage</button>
+        </div>
       </div>
     );
   }
