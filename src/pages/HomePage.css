@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-family: 'Roboto', sans-serif;
 }
 
 .home-container {
@@ -9,30 +9,42 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: #2980b9; /* Blue background color */
+  background-color: #2980b9;
   padding: 50px;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
+  position: relative; /* Added position relative for positioning login box */
+}
+
+.login-container {
+  position: absolute; /* Positioned absolutely within the home container */
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
 }
 
 .logo {
-  width: 200px; /* Larger logo size */
-  max-width: 100%; /* Ensure logo stays within container */
-  margin-bottom: 20px; /* Add margin for spacing */
+  width: 200px;
+  max-width: 100%;
+  margin-bottom: 20px;
 }
 
 .home-text {
-  font-family: 'Roboto', sans-serif; /* Use Roboto font for the text */
-  font-size: 24px; /* Larger font size for the text */
-  color: white; /* White text color */
-  margin-bottom: 20px; /* Add margin for spacing */
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .home-button {
   width: 250px;
   padding: 15px;
-  font-size: 17px; /* Larger font size */
-  color: white; /* White text color */
-  background-color: #3498db; /* Blue button background color */
+  font-size: 17px;
+  color: white;
+  background-color: #3498db;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -41,5 +53,33 @@ body {
 
 .home-button:hover {
   transform: scale(1.1);
-  background-color: #b92929; /* Slightly darker blue on hover */
+  background-color: #b92929;
+}
+
+.red-text {
+  color: red;
+  cursor: pointer;
+}
+
+.signup-link {
+  text-decoration: underline;
+}
+
+.login-box input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.login-box button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
