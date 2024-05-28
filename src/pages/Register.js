@@ -1,49 +1,50 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
-import './Register.css';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import './RegisterPage.css';
 
-const Register = () => {
+const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       navigate('/');
     } catch (error) {
-      console.error("Error registering:", error);
+      setError(error.message);
     }
   };
 
   return (
     <div className="register-container">
-      <div className="register-box">
-        <h2>Register:</h2>
-        <form onSubmit={handleRegister}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <p className="forgot-password">Forgot your password? Too bad!</p>
-          <button type="submit">Register</button>
-        </form>
-        <button onClick={() => navigate('/')}>Back to Home</button>
-      </div>
+      <h2>Register:</h2>
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleRegister}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Register</button>
+      </form>
+      <button onClick={() => navigate('/')}>Return to Homepage</button>
     </div>
   );
 };
 
-export default Register;
+export default RegisterPage;

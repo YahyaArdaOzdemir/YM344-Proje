@@ -71,7 +71,7 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
+  width: 90%;
 }
 
 .login-box button {
@@ -82,4 +82,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+}
+.login-box button:hover {
+  transform: scale(1.0);
+  background-color: #b92929;
 }
