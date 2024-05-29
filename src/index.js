@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Import the auth module
+
 import './auth';
 
 ReactDOM.render(

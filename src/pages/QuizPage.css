@@ -1,4 +1,3 @@
-/* src/pages/QuizPage.css */
 body, html, #root {
   height: 100%;
   margin: 0;
@@ -78,9 +77,9 @@ body, html, #root {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 220px; /* Adjust this margin to be slightly larger than the question-navigation width */
+  margin-left: 220px;
   padding: 20px;
-  width: calc(100% - 220px); /* Adjust this width to account for the question-navigation width */
+  width: calc(100% - 220px);
   height: 100%;
   overflow-y: auto;
 }
@@ -111,11 +110,11 @@ body, html, #root {
 
 .option.correct.selected,
 .option.correct {
-  background-color: #8ed68e; /* Light green for correct answer */
+  background-color: #8ed68e;
 }
 
 .option.incorrect.selected {
-  background-color: #ff7f7f; /* Light red for incorrect answer */
+  background-color: #ff7f7f;
 }
 
 .correct-answer {
