@@ -7,13 +7,13 @@ const { Builder, By, until } = require('selenium-webdriver');
 
   try {
     console.log('Starting test...');
-    // go to the netlify site
+    // go to netlify site
     await driver.get('https://ym344quiz.netlify.app/');
 
-    // url ye bak
+    // look at url
     console.log('Navigated to:', await driver.getCurrentUrl());
 
-    // quiz button arrayları
+    // quiz button array
     const quizButtons = [
       'ISTQB CTFL v4.0 Sample Exam A Questions v1.5',
       'ISTQB CTFL v4.0 Sample Exam B Questions v1.4',
@@ -22,22 +22,22 @@ const { Builder, By, until } = require('selenium-webdriver');
     ];
 
     for (let i = 0; i < quizButtons.length; i++) {
-      // quiz düğmesine bas
+      // press quiz button
       await driver.wait(until.elementLocated(By.xpath(`//button[contains(text(), "${quizButtons[i]}")]`)), 5000).click();
 
-      // sayfa yüklensin bekle
+      // wait for page to load
       await driver.wait(until.elementLocated(By.css('.quiz-container')), 5000);
 
-      // url ye bak
+      // look at url
       console.log('Navigated to quiz page:', await driver.getCurrentUrl());
 
-      // ana sayfaya git
+      // go to homepage
       await driver.wait(until.elementLocated(By.xpath('//button[contains(text(), "Return to homepage")]')), 5000).click();
 
-      // Wait until the home page is loaded
+      // wait until home page is loaded
       await driver.wait(until.elementLocated(By.css('.home-container')), 5000);
 
-      // Log the current URL to ensure the navigation back to the homepage was successful
+      // navigation back to homepage worked
       console.log('Returned to homepage:', await driver.getCurrentUrl());
     }
 

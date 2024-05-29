@@ -1,3 +1,4 @@
+//Testing error logs
 const { Builder, By, until } = require('selenium-webdriver');
 
 (async function loginAndCompleteRandomQuizTest() {
@@ -7,14 +8,14 @@ const { Builder, By, until } = require('selenium-webdriver');
 
   try {
     console.log('Starting login test...');
-    await driver.get('https://ym344quiz.netlify.app/'); // Replace with your actual URL
+    await driver.get('https://ym344quiz.netlify.app/');
 
     // Log in with email and password
     await driver.findElement(By.css('input[type="email"]')).sendKeys('test@test.com');
     await driver.findElement(By.css('input[type="password"]')).sendKeys('123456');
     await driver.findElement(By.css('form button[type="submit"]')).click();
     await driver.sleep(3000);
-    
+
     // Wait for the homepage to load and verify login
     await driver.wait(until.elementLocated(By.css('.home-container')), 5000);
     console.log('Logged in successfully.');

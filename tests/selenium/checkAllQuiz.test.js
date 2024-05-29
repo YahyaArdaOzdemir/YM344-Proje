@@ -8,7 +8,7 @@ const { Builder, By, until } = require('selenium-webdriver');
   try {
     console.log('Starting test...');
 
-    // Go to the Netlify site
+    // go to Netlify site
     await driver.get('https://ym344quiz.netlify.app/');
 
     // Array of quiz button texts
@@ -33,7 +33,7 @@ const { Builder, By, until } = require('selenium-webdriver');
       while (true) {
         try {
           // Wait for the next button to be clickable
-          let nextButton = await driver.wait(until.elementLocated(By.xpath('//button[contains(text(), "Next Question")]')), 5000);
+          let nextButton = await driver.wait(until.elementLocated(By.xpath('//button[contains(text(), "Next Question")]')), 1000);
 
           // Click the next button
           await nextButton.click();
