@@ -7,13 +7,13 @@ const { Builder, By, until } = require('selenium-webdriver');
 
   try {
     console.log('Starting test...');
-    // Navigate to the Netlify deployed site
+    // go to the netlify site
     await driver.get('https://ym344quiz.netlify.app/');
 
-    // Log the current URL to ensure the navigation was successful
+    // url ye bak
     console.log('Navigated to:', await driver.getCurrentUrl());
 
-    // Array of quiz button texts
+    // quiz button arrayları
     const quizButtons = [
       'ISTQB CTFL v4.0 Sample Exam A Questions v1.5',
       'ISTQB CTFL v4.0 Sample Exam B Questions v1.4',
@@ -22,16 +22,16 @@ const { Builder, By, until } = require('selenium-webdriver');
     ];
 
     for (let i = 0; i < quizButtons.length; i++) {
-      // Find and click the quiz button
+      // quiz düğmesine bas
       await driver.wait(until.elementLocated(By.xpath(`//button[contains(text(), "${quizButtons[i]}")]`)), 5000).click();
 
-      // Wait until the quiz page is loaded
+      // sayfa yüklensin bekle
       await driver.wait(until.elementLocated(By.css('.quiz-container')), 5000);
 
-      // Log the current URL to ensure the navigation to the quiz page was successful
+      // url ye bak
       console.log('Navigated to quiz page:', await driver.getCurrentUrl());
 
-      // Navigate back to the home page
+      // ana sayfaya git
       await driver.wait(until.elementLocated(By.xpath('//button[contains(text(), "Return to homepage")]')), 5000).click();
 
       // Wait until the home page is loaded

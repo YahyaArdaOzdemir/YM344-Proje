@@ -1,22 +1,29 @@
 /* src/pages/QuizPage.css */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
 .quiz-container {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  padding: 20px;
+  height: 100%;
+  width: 100%;
   background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .question-navigation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px;
-  max-width: 150px;
-  max-height: 80vh;
-  overflow-y: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .question-navigation h2 {
@@ -43,6 +50,7 @@
 .question-navigation .question-list {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .question-navigation .question-list .question-item {
@@ -66,12 +74,21 @@
 }
 
 .main-content {
-  flex-grow: 1;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 220px; /* Adjust this margin to be slightly larger than the question-navigation width */
+  padding: 20px;
+  width: calc(100% - 220px); /* Adjust this width to account for the question-navigation width */
+  height: 100%;
+  overflow-y: auto;
 }
 
 .question-block {
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .options {
@@ -135,4 +152,6 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
 }

@@ -4,7 +4,7 @@ const { Builder, By, until } = require('selenium-webdriver');
   let driver = await new Builder().forBrowser('chrome').build();
 
   try {
-    await driver.get('http://localhost:3000');
+    await driver.get('https://ym344quiz.netlify.app/');
 
     await driver.findElement(By.id('quizPageLink')).click();
 

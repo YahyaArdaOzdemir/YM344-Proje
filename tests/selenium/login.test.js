@@ -17,7 +17,7 @@ async function loginTest() {
 
     console.log('Navigating to the home page...');
     // Navigate to the home page
-    await driver.get('http://localhost:3000'); // Change URL to your local or deployed app
+    await driver.get('https://ym344quiz.netlify.app/'); // Change URL to your local or deployed app
     console.log('Successfully navigated to the home page');
 
     console.log('Filling email field...');

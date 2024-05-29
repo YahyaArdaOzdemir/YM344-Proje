@@ -1,3 +1,4 @@
+// QuizPage.js
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import quizData from '../data/quizData';
