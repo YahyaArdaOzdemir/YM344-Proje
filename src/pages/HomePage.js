@@ -28,7 +28,7 @@ const HomePage = () => {
   const fetchQuizResults = async (userId) => {
     const q = query(collection(db, 'quizResults'), where('userId', '==', userId));
     const querySnapshot = await getDocs(q);
-    const results = querySnapshot.docs.map(doc => doc.data());
+    const results = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
     setQuizResults(results);
   };
 
@@ -52,13 +52,18 @@ const HomePage = () => {
             <button onClick={() => navigate('/random-quiz')}>Randomized Quiz</button>
             <div>
               <h3>Your Quiz Results</h3>
-              <ul>
-                {quizResults.map((result, index) => (
-                  <li key={index}>
-                    Correct: {result.correctAnswers}, Incorrect: {result.incorrectAnswers}
-                  </li>
-                ))}
-              </ul>
+              {quizResults.length === 0 ? (
+                <p>No quiz results found.</p>
+              ) : (
+                <ul>
+                  {quizResults.map((result, index) => (
+                    <li key={index}>
+                      <p>Correct: {result.correctAnswers}, Incorrect: {result.incorrectAnswers}</p>
+                      <p>Date: {new Date(result.timestamp.seconds * 1000).toLocaleDateString()}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ) : (

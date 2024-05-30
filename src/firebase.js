@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAjeyeFmjd3xuR23wU-ykBpV80BeRPYl60",
@@ -15,4 +15,17 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db };
+const saveQuizResult = async (correctAnswers, incorrectAnswers) => {
+  try {
+    const docRef = await addDoc(collection(db, "quizResults"), {
+      correctAnswers,
+      incorrectAnswers,
+      timestamp: new Date()
+    });
+    console.log("Quiz result written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding quiz result: ", e);
+  }
+};
+
+export { auth, db, saveQuizResult };
